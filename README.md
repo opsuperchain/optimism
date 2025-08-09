@@ -43,7 +43,7 @@ Detailed specifications for the OP Stack can be found within the [OP Stack Specs
 
 ## Community
 
-General discussion happens most frequently on the [Optimism discord](https://discord.gg/optimism).
+General discussion happens most frequently on the [Optimism Discord](https://discord.gg/optimism).
 Governance discussion can also be found on the [Optimism Governance Forum](https://gov.optimism.io/).
 
 ## Contributing
