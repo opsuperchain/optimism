@@ -11,21 +11,9 @@ type SyncBackend interface {
 }
 
 type SyncFrontend struct {
-	b SyncBackend
+	SyncBackend
 }
 
 func NewSyncFrontend(b SyncBackend) *SyncFrontend {
-	return &SyncFrontend{b: b}
-}
-
-func (s *SyncFrontend) GetSession(ctx context.Context) error {
-	return s.b.GetSession(ctx)
-}
-
-func (s *SyncFrontend) DeleteSession(ctx context.Context) error {
-	return s.b.DeleteSession(ctx)
-}
-
-func (s *SyncFrontend) ListSessions(ctx context.Context) ([]string, error) {
-	return s.b.ListSessions(ctx)
+	return &SyncFrontend{SyncBackend: b}
 }

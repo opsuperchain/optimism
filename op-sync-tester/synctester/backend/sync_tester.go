@@ -92,6 +92,8 @@ func (s *SyncTester) ListSessions(ctx context.Context) ([]string, error) {
 	return []string{}, nil
 }
 
+// EthBackend interface implementation
+
 func (s *SyncTester) GetBlockReceipts(ctx context.Context, blockNrOrHash rpc.BlockNumberOrHash) ([]*types.Receipt, error) {
 	return nil, nil
 }
@@ -107,6 +109,10 @@ func (s *SyncTester) GetBlockByNumber(ctx context.Context, number *big.Int) (*ty
 func (s *SyncTester) ChainId(ctx context.Context) (eth.ChainID, error) {
 	return s.chainID, nil
 }
+
+// EngineBackend interface implementation
+// Note: These methods are stubs required to satisfy the EngineBackend interface.
+// They return nil to indicate that these operations are not yet implemented.
 
 func (s *SyncTester) GetPayloadV1(ctx context.Context, payloadID eth.PayloadID) (*eth.ExecutionPayload, error) {
 	return nil, nil
