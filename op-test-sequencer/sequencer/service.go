@@ -147,7 +147,7 @@ func (s *Service) initRPCHandler(cfg *config.Config) error {
 		s.log.Info("Admin RPC enabled")
 		if err := s.rpcHandler.AddAPI(rpc.API{
 			Namespace:     "admin",
-			Service:       &frontend.AdminFrontend{Backend: s.backend},
+			Service:       &frontend.AdminFrontend{AdminBackend: s.backend},
 			Authenticated: true,
 		}); err != nil {
 			return fmt.Errorf("failed to add admin API: %w", err)

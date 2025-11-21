@@ -7,9 +7,5 @@ type AdminBackend interface {
 }
 
 type AdminFrontend struct {
-	Backend AdminBackend
-}
-
-func (af *AdminFrontend) Hello(ctx context.Context, name string) (string, error) {
-	return af.Backend.Hello(ctx, name)
+	AdminBackend
 }

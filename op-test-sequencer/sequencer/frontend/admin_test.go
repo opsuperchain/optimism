@@ -17,7 +17,7 @@ var _ AdminBackend = (*mockAdminBackend)(nil)
 
 func TestAdmin(t *testing.T) {
 	b := &mockAdminBackend{}
-	front := &AdminFrontend{Backend: b}
+	front := &AdminFrontend{AdminBackend: b}
 	out, err := front.Hello(context.Background(), "world")
 	require.NoError(t, err)
 	require.Equal(t, "hello world", out)
