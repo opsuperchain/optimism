@@ -18,25 +18,9 @@ type EthBackend interface {
 }
 
 type EthFrontend struct {
-	b EthBackend
+	EthBackend
 }
 
 func NewEthFrontend(b EthBackend) *EthFrontend {
-	return &EthFrontend{b: b}
-}
-
-func (e *EthFrontend) GetBlockByNumber(ctx context.Context, number *big.Int) (*types.Header, error) {
-	return e.b.GetBlockByNumber(ctx, number)
-}
-
-func (e *EthFrontend) GetBlockByHash(ctx context.Context, hash common.Hash) (*types.Header, error) {
-	return e.b.GetBlockByHash(ctx, hash)
-}
-
-func (e *EthFrontend) GetBlockReceipts(ctx context.Context, blockNrOrHash rpc.BlockNumberOrHash) ([]*types.Receipt, error) {
-	return e.b.GetBlockReceipts(ctx, blockNrOrHash)
-}
-
-func (e *EthFrontend) ChainId(ctx context.Context) (eth.ChainID, error) {
-	return e.b.ChainId(ctx)
+	return &EthFrontend{EthBackend: b}
 }
